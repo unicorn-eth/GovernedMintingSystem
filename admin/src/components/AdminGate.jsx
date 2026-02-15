@@ -10,9 +10,9 @@ export default function AdminGate({ children }) {
   if (!isConnected) {
     return (
       <div className="min-h-screen bg-gradient-page flex items-center justify-center p-4">
-        <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl p-8 w-full max-w-md text-center space-y-6">
-          <ShieldCheck size={48} className="mx-auto text-indigo-400" />
-          <h1 className="text-2xl font-bold text-gray-800">Admin Panel</h1>
+        <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl p-5 sm:p-8 w-full max-w-md text-center space-y-4 sm:space-y-6">
+          <ShieldCheck size={40} className="mx-auto text-indigo-400" />
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-800">Admin Panel</h1>
           <p className="text-gray-500 text-sm">Connect an authorized admin wallet</p>
           <div className="flex justify-center">
             <ConnectButton />
@@ -25,15 +25,15 @@ export default function AdminGate({ children }) {
   if (!isAdmin) {
     return (
       <div className="min-h-screen bg-gradient-page flex items-center justify-center p-4">
-        <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl p-8 w-full max-w-md text-center space-y-6">
-          <ShieldCheck size={48} className="mx-auto text-indigo-400" />
-          <h1 className="text-2xl font-bold text-gray-800">Admin Authentication</h1>
+        <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl p-5 sm:p-8 w-full max-w-md text-center space-y-4 sm:space-y-6">
+          <ShieldCheck size={40} className="mx-auto text-indigo-400" />
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-800">Admin Authentication</h1>
           <p className="text-gray-500 text-sm">Sign a message to verify your admin access</p>
           {error && <p className="text-red-500 text-sm">{error}</p>}
           <button
             onClick={authenticate}
             disabled={loading}
-            className="bg-gradient-brand text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg transition disabled:opacity-50 flex items-center justify-center gap-2 mx-auto"
+            className="bg-gradient-brand text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-semibold hover:shadow-lg transition disabled:opacity-50 flex items-center justify-center gap-2 mx-auto"
           >
             {loading ? 'Signing...' : <><LogIn size={18} /> Sign to Authenticate</>}
           </button>

@@ -1,0 +1,41 @@
+{
+  "app": {
+    "title": "Frappe Gouvernée",
+    "subtitle": "Soumettez votre photo pour considération NFT",
+    "submitTitle": "Soumettez Votre Photo",
+    "submitSubtitle": "Prenez une photo et ajoutez des détails pour la frappe NFT"
+  },
+  "wallet": {
+    "connect": "Connectez Votre Portefeuille",
+    "connectDesc": "Connectez-vous pour soumettre votre photo",
+    "connecting": "Connexion du portefeuille...",
+    "timeout": "La connexion automatique a expiré. Connectez-vous manuellement."
+  },
+  "form": {
+    "comment": "Commentaire",
+    "commentPlaceholder": "Partagez vos pensées...",
+    "email": "E-mail",
+    "emailPlaceholder": "votre@email.com",
+    "socialHandles": "Réseaux Sociaux",
+    "optional": "(facultatif)",
+    "xPlaceholder": "X / Twitter",
+    "instagramPlaceholder": "Instagram",
+    "blueskyPlaceholder": "Bluesky",
+    "submit": "Soumettre pour Révision",
+    "submitting": "Envoi en cours...",
+    "fileTooLarge": "Fichier trop volumineux. Max 50 Mo.",
+    "compressionFailed": "Échec du traitement. Essayez une autre image.",
+    "compressing": "Compression de l'image..."
+  },
+  "photo": {
+    "takeOrUpload": "Prenez une photo ou téléchargez une image",
+    "takePhoto": "Prendre Photo",
+    "upload": "Télécharger"
+  },
+  "confirmation": {
+    "title": "Soumission Reçue !",
+    "description": "Votre photo a été soumise pour révision. Un administrateur l'examinera sous peu.",
+    "reference": "Référence",
+    "submitAnother": "Soumettre une Autre"
+  }
+}

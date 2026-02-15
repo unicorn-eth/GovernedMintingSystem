@@ -52,9 +52,9 @@ export default function SubmissionQueue() {
           <button
             key={s.id}
             onClick={() => setSelected(s)}
-            className="bg-white/90 rounded-2xl shadow-sm hover:shadow-md transition p-4 text-left"
+            className="bg-white/90 rounded-2xl shadow-sm hover:shadow-md transition p-3 sm:p-4 text-left"
           >
-            <img src={s.photoGatewayUrl} alt="" className="w-full h-40 object-cover rounded-xl mb-3" />
+            <img src={s.photoGatewayUrl} alt="" className="w-full h-32 sm:h-40 object-cover rounded-xl mb-2 sm:mb-3" />
             <p className="text-sm text-gray-800 line-clamp-2 mb-2">{s.comment}</p>
             <div className="flex items-center justify-between text-xs text-gray-400">
               <span className="font-mono">{s.walletAddress?.slice(0, 6)}...{s.walletAddress?.slice(-4)}</span>

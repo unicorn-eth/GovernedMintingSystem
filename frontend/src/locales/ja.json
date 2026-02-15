@@ -1,0 +1,41 @@
+{
+  "app": {
+    "title": "ガバナンスミンティング",
+    "subtitle": "NFT検討のために写真を提出してください",
+    "submitTitle": "写真を提出",
+    "submitSubtitle": "写真を撮り、NFTミンティングの詳細を追加してください"
+  },
+  "wallet": {
+    "connect": "ウォレットを接続",
+    "connectDesc": "写真を提出するために接続してください",
+    "connecting": "ウォレット接続中...",
+    "timeout": "自動接続がタイムアウトしました。手動で接続してください。"
+  },
+  "form": {
+    "comment": "コメント",
+    "commentPlaceholder": "あなたの考えを共有...",
+    "email": "メール",
+    "emailPlaceholder": "your@email.com",
+    "socialHandles": "ソーシャルメディア",
+    "optional": "（任意）",
+    "xPlaceholder": "X / Twitter",
+    "instagramPlaceholder": "Instagram",
+    "blueskyPlaceholder": "Bluesky",
+    "submit": "レビューに提出",
+    "submitting": "提出中...",
+    "fileTooLarge": "ファイルが大きすぎます。最大50MB。",
+    "compressionFailed": "画像の処理に失敗しました。別の画像をお試しください。",
+    "compressing": "画像を圧縮中..."
+  },
+  "photo": {
+    "takeOrUpload": "写真を撮るか画像をアップロード",
+    "takePhoto": "写真を撮る",
+    "upload": "アップロード"
+  },
+  "confirmation": {
+    "title": "提出を受け付けました！",
+    "description": "写真はレビューのために提出されました。管理者がまもなく確認します。",
+    "reference": "参照番号",
+    "submitAnother": "もう一枚提出"
+  }
+}

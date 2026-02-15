@@ -28,7 +28,7 @@ export default function useAdminAuth() {
     try {
       const { message } = await getChallenge();
       const signature = await signMessageAsync({ message });
-      const { token } = await verifyAuth(message, signature);
+      const { token } = await verifyAuth(message, signature, address);
 
       localStorage.setItem('admin_token', token);
       localStorage.setItem('admin_address', address.toLowerCase());

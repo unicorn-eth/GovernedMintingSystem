@@ -1,0 +1,41 @@
+{
+  "app": {
+    "title": "治理铸造",
+    "subtitle": "提交您的照片以考虑铸造NFT",
+    "submitTitle": "提交您的照片",
+    "submitSubtitle": "拍摄照片并添加详细信息以考虑铸造NFT"
+  },
+  "wallet": {
+    "connect": "连接您的钱包",
+    "connectDesc": "连接以提交您的照片进行审核",
+    "connecting": "正在连接钱包...",
+    "timeout": "自动连接超时。请手动连接。"
+  },
+  "form": {
+    "comment": "评论",
+    "commentPlaceholder": "分享您的想法...",
+    "email": "电子邮箱",
+    "emailPlaceholder": "your@email.com",
+    "socialHandles": "社交媒体",
+    "optional": "（可选）",
+    "xPlaceholder": "X / Twitter",
+    "instagramPlaceholder": "Instagram",
+    "blueskyPlaceholder": "Bluesky",
+    "submit": "提交审核",
+    "submitting": "提交中...",
+    "fileTooLarge": "文件过大。最大50MB。",
+    "compressionFailed": "图片处理失败。请尝试其他图片。",
+    "compressing": "正在压缩图片..."
+  },
+  "photo": {
+    "takeOrUpload": "拍摄照片或上传图片",
+    "takePhoto": "拍照",
+    "upload": "上传"
+  },
+  "confirmation": {
+    "title": "提交已收到！",
+    "description": "您的照片已提交审核。管理员将很快进行审查。",
+    "reference": "参考编号",
+    "submitAnother": "再次提交"
+  }
+}

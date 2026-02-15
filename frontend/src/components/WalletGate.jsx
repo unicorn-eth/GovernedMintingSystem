@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Wallet } from 'lucide-react';
 
 export default function WalletGate() {
+  const { t } = useTranslation();
   const [autoconnectTimeout, setAutoconnectTimeout] = useState(false);
 
   const isAutoconnecting = () => {
@@ -19,22 +21,22 @@ export default function WalletGate() {
 
   if (isAutoconnecting() && !autoconnectTimeout) {
     return (
-      <div className="text-center py-12">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4" />
-        <p className="text-gray-600">Connecting wallet...</p>
+      <div className="text-center py-6 sm:py-12">
+        <div className="animate-spin rounded-full h-10 w-10 sm:h-12 sm:w-12 border-b-2 border-indigo-600 mx-auto mb-4" />
+        <p className="text-gray-600">{t('wallet.connecting')}</p>
       </div>
     );
   }
 
   return (
-    <div className="text-center py-12 space-y-6">
-      <Wallet size={48} className="mx-auto text-indigo-400" />
+    <div className="text-center py-6 sm:py-12 space-y-4 sm:space-y-6">
+      <Wallet size={40} className="mx-auto text-indigo-400" />
       <div>
-        <h2 className="text-xl font-bold text-gray-800 mb-2">Connect Your Wallet</h2>
-        <p className="text-gray-500 text-sm">Connect to submit your photo for review</p>
+        <h2 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">{t('wallet.connect')}</h2>
+        <p className="text-gray-500 text-sm">{t('wallet.connectDesc')}</p>
       </div>
       {autoconnectTimeout && (
-        <p className="text-sm text-amber-600">Auto-connect timed out. Please connect manually.</p>
+        <p className="text-sm text-amber-600">{t('wallet.timeout')}</p>
       )}
       <div className="flex justify-center">
         <ConnectButton />

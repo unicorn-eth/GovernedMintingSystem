@@ -74,9 +74,9 @@ export default function SubmissionDetail({ submission: initial, onBack }) {
       </button>
 
       <div className="bg-white/95 rounded-2xl shadow-lg overflow-hidden">
-        <img src={sub.photoGatewayUrl} alt="" className="w-full max-h-80 object-cover" />
+        <img src={sub.photoGatewayUrl} alt="" className="w-full max-h-56 sm:max-h-72 md:max-h-96 object-contain bg-gray-100" />
 
-        <div className="p-6 space-y-4">
+        <div className="p-3 sm:p-6 space-y-3 sm:space-y-4">
           {/* Status badge */}
           <div className="flex items-center justify-between">
             <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
@@ -109,14 +109,14 @@ export default function SubmissionDetail({ submission: initial, onBack }) {
           </div>
 
           {/* Fields */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {field('X Handle', 'xHandle')}
             {field('Instagram', 'instagramHandle')}
             {field('Bluesky', 'blueskyHandle')}
             {field('Email', 'email')}
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div>
               <label className="block text-xs font-medium text-gray-500 mb-1">Wallet</label>
               <p className="text-xs font-mono text-gray-600 break-all">{sub.walletAddress}</p>
@@ -163,18 +163,18 @@ export default function SubmissionDetail({ submission: initial, onBack }) {
                   ))}
                 </select>
               </div>
-              <div className="flex gap-3">
+              <div className="flex gap-2 sm:gap-3">
                 <button
                   onClick={handleApprove}
                   disabled={acting || !selectedCollection}
-                  className="flex-1 bg-green-600 text-white py-3 rounded-xl font-semibold hover:bg-green-700 transition disabled:opacity-50 flex items-center justify-center gap-2"
+                  className="flex-1 bg-green-600 text-white py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-semibold hover:bg-green-700 transition disabled:opacity-50 flex items-center justify-center gap-2"
                 >
                   <Check size={18} /> Approve
                 </button>
                 <button
                   onClick={handleDeny}
                   disabled={acting}
-                  className="flex-1 bg-red-600 text-white py-3 rounded-xl font-semibold hover:bg-red-700 transition disabled:opacity-50 flex items-center justify-center gap-2"
+                  className="flex-1 bg-red-600 text-white py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-semibold hover:bg-red-700 transition disabled:opacity-50 flex items-center justify-center gap-2"
                 >
                   <X size={18} /> Deny
                 </button>

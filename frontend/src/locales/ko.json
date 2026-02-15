@@ -1,0 +1,41 @@
+{
+  "app": {
+    "title": "거버넌스 민팅",
+    "subtitle": "NFT 검토를 위해 사진을 제출하세요",
+    "submitTitle": "사진 제출",
+    "submitSubtitle": "사진을 찍고 NFT 민팅을 위한 세부 정보를 추가하세요"
+  },
+  "wallet": {
+    "connect": "지갑 연결",
+    "connectDesc": "사진을 제출하려면 연결하세요",
+    "connecting": "지갑 연결 중...",
+    "timeout": "자동 연결 시간 초과. 수동으로 연결해 주세요."
+  },
+  "form": {
+    "comment": "댓글",
+    "commentPlaceholder": "생각을 공유하세요...",
+    "email": "이메일",
+    "emailPlaceholder": "your@email.com",
+    "socialHandles": "소셜 미디어",
+    "optional": "(선택 사항)",
+    "xPlaceholder": "X / Twitter",
+    "instagramPlaceholder": "Instagram",
+    "blueskyPlaceholder": "Bluesky",
+    "submit": "검토 제출",
+    "submitting": "제출 중...",
+    "fileTooLarge": "파일이 너무 큽니다. 최대 50MB.",
+    "compressionFailed": "이미지 처리 실패. 다른 이미지를 시도하세요.",
+    "compressing": "이미지 압축 중..."
+  },
+  "photo": {
+    "takeOrUpload": "사진을 찍거나 이미지를 업로드하세요",
+    "takePhoto": "사진 찍기",
+    "upload": "업로드"
+  },
+  "confirmation": {
+    "title": "제출 완료!",
+    "description": "사진이 검토를 위해 제출되었습니다. 관리자가 곧 확인할 것입니다.",
+    "reference": "참조 번호",
+    "submitAnother": "다시 제출"
+  }
+}

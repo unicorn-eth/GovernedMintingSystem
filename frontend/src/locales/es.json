@@ -1,0 +1,41 @@
+{
+  "app": {
+    "title": "Acuñación Gobernada",
+    "subtitle": "Envía tu foto para consideración de NFT",
+    "submitTitle": "Envía Tu Foto",
+    "submitSubtitle": "Toma una foto y agrega detalles para considerar la acuñación de NFT"
+  },
+  "wallet": {
+    "connect": "Conecta Tu Billetera",
+    "connectDesc": "Conéctate para enviar tu foto a revisión",
+    "connecting": "Conectando billetera...",
+    "timeout": "La conexión automática expiró. Conéctate manualmente."
+  },
+  "form": {
+    "comment": "Comentario",
+    "commentPlaceholder": "Comparte tus pensamientos...",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "tu@correo.com",
+    "socialHandles": "Redes Sociales",
+    "optional": "(opcional)",
+    "xPlaceholder": "X / Twitter",
+    "instagramPlaceholder": "Instagram",
+    "blueskyPlaceholder": "Bluesky",
+    "submit": "Enviar para Revisión",
+    "submitting": "Enviando...",
+    "fileTooLarge": "Archivo muy grande. Máximo 50MB.",
+    "compressionFailed": "Error al procesar imagen. Intenta con otra.",
+    "compressing": "Comprimiendo imagen..."
+  },
+  "photo": {
+    "takeOrUpload": "Toma una foto o sube una imagen",
+    "takePhoto": "Tomar Foto",
+    "upload": "Subir"
+  },
+  "confirmation": {
+    "title": "¡Envío Recibido!",
+    "description": "Tu foto ha sido enviada para revisión. Un administrador la revisará pronto.",
+    "reference": "Referencia",
+    "submitAnother": "Enviar Otra"
+  }
+}

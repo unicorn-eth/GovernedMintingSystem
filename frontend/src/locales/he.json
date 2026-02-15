@@ -1,0 +1,41 @@
+{
+  "app": {
+    "title": "טביעה מבוקרת",
+    "subtitle": "הגש את התמונה שלך לשקילת NFT",
+    "submitTitle": "הגש את התמונה שלך",
+    "submitSubtitle": "צלם תמונה והוסף פרטים לשקילת טביעת NFT"
+  },
+  "wallet": {
+    "connect": "חבר את הארנק שלך",
+    "connectDesc": "התחבר כדי להגיש את התמונה שלך לבדיקה",
+    "connecting": "מחבר ארנק...",
+    "timeout": "החיבור האוטומטי פג. אנא התחבר ידנית."
+  },
+  "form": {
+    "comment": "תגובה",
+    "commentPlaceholder": "שתף את המחשבות שלך...",
+    "email": "אימייל",
+    "emailPlaceholder": "your@email.com",
+    "socialHandles": "רשתות חברתיות",
+    "optional": "(אופציונלי)",
+    "xPlaceholder": "X / טוויטר",
+    "instagramPlaceholder": "אינסטגרם",
+    "blueskyPlaceholder": "בלוסקיי",
+    "submit": "הגש לבדיקה",
+    "submitting": "שולח...",
+    "fileTooLarge": "הקובץ גדול מדי. מקסימום 50MB.",
+    "compressionFailed": "עיבוד התמונה נכשל. נסה תמונה אחרת.",
+    "compressing": "דוחס תמונה..."
+  },
+  "photo": {
+    "takeOrUpload": "צלם תמונה או העלה תמונה",
+    "takePhoto": "צלם תמונה",
+    "upload": "העלה"
+  },
+  "confirmation": {
+    "title": "ההגשה התקבלה!",
+    "description": "התמונה שלך הוגשה לבדיקה. מנהל יבדוק אותה בקרוב.",
+    "reference": "מספר הפניה",
+    "submitAnother": "הגש עוד"
+  }
+}

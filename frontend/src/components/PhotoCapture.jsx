@@ -1,8 +1,10 @@
 import { useState, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Camera, Upload, X } from 'lucide-react';
 import { compressImage } from '../lib/compressImage';
 
 export default function PhotoCapture({ photo, setPhoto, photoPreview, setPhotoPreview }) {
+  const { t } = useTranslation();
   const fileInputRef = useRef(null);
   const cameraInputRef = useRef(null);
   const [compressing, setCompressing] = useState(false);
@@ -12,7 +14,7 @@ export default function PhotoCapture({ photo, setPhoto, photoPreview, setPhotoPr
     if (!file) return;
 
     if (file.size > 50 * 1024 * 1024) {
-      alert('File too large. Max 50MB.');
+      alert(t('form.fileTooLarge'));
       return;
     }
 
@@ -23,7 +25,7 @@ export default function PhotoCapture({ photo, setPhoto, photoPreview, setPhotoPr
       setPhotoPreview(URL.createObjectURL(compressedBlob));
     } catch (err) {
       console.error('Compression failed:', err);
-      alert('Failed to process image. Please try another.');
+      alert(t('form.compressionFailed'));
     } finally {
       setCompressing(false);
     }
@@ -39,7 +41,7 @@ export default function PhotoCapture({ photo, setPhoto, photoPreview, setPhotoPr
     <div className="space-y-3">
       {photoPreview ? (
         <div className="relative">
-          <img src={photoPreview} alt="Preview" className="w-full rounded-xl max-h-64 object-cover" />
+          <img src={photoPreview} alt="Preview" className="w-full rounded-xl max-h-48 sm:max-h-64 object-cover" />
           <button
             type="button"
             onClick={removePhoto}
@@ -49,9 +51,10 @@ export default function PhotoCapture({ photo, setPhoto, photoPreview, setPhotoPr
           </button>
         </div>
       ) : (
-        <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center">
-          <Camera size={48} className="mx-auto text-gray-400 mb-2" />
-          <p className="text-sm text-gray-500">Take a photo or upload an image</p>
+        <div className="border-2 border-dashed border-gray-300 rounded-xl p-4 sm:p-8 text-center">
+          <Camera size={36} className="sm:hidden mx-auto text-gray-400 mb-2" />
+          <Camera size={48} className="hidden sm:block mx-auto text-gray-400 mb-2" />
+          <p className="text-sm text-gray-500">{t('photo.takeOrUpload')}</p>
         </div>
       )}
 
@@ -63,21 +66,21 @@ export default function PhotoCapture({ photo, setPhoto, photoPreview, setPhotoPr
           <button
             type="button"
             onClick={() => cameraInputRef.current?.click()}
-            className="bg-indigo-600 text-white py-3 rounded-xl font-semibold hover:bg-indigo-700 transition flex items-center justify-center gap-2"
+            className="bg-indigo-600 text-white py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-semibold hover:bg-indigo-700 transition flex items-center justify-center gap-2"
           >
-            <Camera size={20} /> Take Photo
+            <Camera size={20} /> {t('photo.takePhoto')}
           </button>
           <button
             type="button"
             onClick={() => fileInputRef.current?.click()}
-            className="bg-gray-600 text-white py-3 rounded-xl font-semibold hover:bg-gray-700 transition flex items-center justify-center gap-2"
+            className="bg-gray-600 text-white py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-semibold hover:bg-gray-700 transition flex items-center justify-center gap-2"
           >
-            <Upload size={20} /> Upload
+            <Upload size={20} /> {t('photo.upload')}
           </button>
         </div>
       )}
 
-      {compressing && <p className="text-sm text-gray-500 text-center animate-pulse">Compressing image...</p>}
+      {compressing && <p className="text-sm text-gray-500 text-center animate-pulse">{t('form.compressing')}</p>}
     </div>
   );
 }

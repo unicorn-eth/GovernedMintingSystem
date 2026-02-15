@@ -35,11 +35,11 @@ export async function getChallenge() {
   return res.json();
 }
 
-export async function verifyAuth(message, signature) {
+export async function verifyAuth(message, signature, address) {
   const res = await fetch(`${BACKEND_URL}/api/admin/auth/verify`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ message, signature }),
+    body: JSON.stringify({ message, signature, address }),
   });
   if (!res.ok) {
     const err = await res.json().catch(() => ({ error: 'Auth failed' }));

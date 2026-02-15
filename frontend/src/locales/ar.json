@@ -1,0 +1,41 @@
+{
+  "app": {
+    "title": "السك المحكوم",
+    "subtitle": "أرسل صورتك للنظر في سكها كـ NFT",
+    "submitTitle": "أرسل صورتك",
+    "submitSubtitle": "التقط صورة وأضف التفاصيل للنظر في سك NFT"
+  },
+  "wallet": {
+    "connect": "اربط محفظتك",
+    "connectDesc": "اتصل لإرسال صورتك للمراجعة",
+    "connecting": "جارٍ ربط المحفظة...",
+    "timeout": "انتهت مهلة الاتصال التلقائي. يرجى الاتصال يدويًا."
+  },
+  "form": {
+    "comment": "تعليق",
+    "commentPlaceholder": "شارك أفكارك...",
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "your@email.com",
+    "socialHandles": "وسائل التواصل",
+    "optional": "(اختياري)",
+    "xPlaceholder": "X / تويتر",
+    "instagramPlaceholder": "إنستغرام",
+    "blueskyPlaceholder": "بلوسكاي",
+    "submit": "إرسال للمراجعة",
+    "submitting": "جارٍ الإرسال...",
+    "fileTooLarge": "الملف كبير جدًا. الحد الأقصى 50 ميغابايت.",
+    "compressionFailed": "فشل في معالجة الصورة. جرب صورة أخرى.",
+    "compressing": "جارٍ ضغط الصورة..."
+  },
+  "photo": {
+    "takeOrUpload": "التقط صورة أو ارفع صورة",
+    "takePhoto": "التقط صورة",
+    "upload": "رفع"
+  },
+  "confirmation": {
+    "title": "تم استلام الإرسال!",
+    "description": "تم إرسال صورتك للمراجعة. سيراجعها المسؤول قريبًا.",
+    "reference": "المرجع",
+    "submitAnother": "إرسال أخرى"
+  }
+}

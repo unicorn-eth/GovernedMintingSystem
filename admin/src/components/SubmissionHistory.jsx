@@ -32,9 +32,9 @@ export default function SubmissionHistory() {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-3">
-          <h2 className="text-lg font-semibold text-gray-800">History</h2>
+      <div className="flex items-center justify-between mb-3 sm:mb-4">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <h2 className="text-base sm:text-lg font-semibold text-gray-800">History</h2>
           <div className="flex gap-1 bg-white/50 rounded-lg p-0.5">
             {['', 'approved', 'denied'].map((f) => (
               <button
@@ -63,9 +63,9 @@ export default function SubmissionHistory() {
           <button
             key={s.id}
             onClick={() => setSelected(s)}
-            className="w-full bg-white/90 rounded-xl shadow-sm hover:shadow-md transition p-4 flex items-center gap-4 text-left"
+            className="w-full bg-white/90 rounded-xl shadow-sm hover:shadow-md transition p-3 sm:p-4 flex items-center gap-3 sm:gap-4 text-left"
           >
-            <img src={s.photoGatewayUrl} alt="" className="w-16 h-16 object-cover rounded-lg flex-shrink-0" />
+            <img src={s.photoGatewayUrl} alt="" className="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-lg flex-shrink-0" />
             <div className="flex-1 min-w-0">
               <p className="text-sm text-gray-800 truncate">{s.comment}</p>
               <p className="text-xs text-gray-400 font-mono">{s.walletAddress?.slice(0, 10)}...</p>

@@ -21,12 +21,12 @@ export default function SocialShare({ submission, txHash, tokenId }) {
   if (!urls) return null;
 
   return (
-    <div className="bg-gray-50 rounded-xl p-4 space-y-3">
+    <div className="bg-gray-50 rounded-xl p-3 sm:p-4 space-y-3">
       <h3 className="text-sm font-semibold text-gray-700 flex items-center gap-1.5">
         <Share2 size={14} /> Share
       </h3>
 
-      <div className="flex gap-2">
+      <div className="flex flex-col sm:flex-row gap-2">
         {/* X / Twitter */}
         <a
           href={urls.x.url}

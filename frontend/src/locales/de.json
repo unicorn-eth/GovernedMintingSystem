@@ -1,0 +1,41 @@
+{
+  "app": {
+    "title": "Gesteuerte Prägung",
+    "subtitle": "Reichen Sie Ihr Foto zur NFT-Prüfung ein",
+    "submitTitle": "Foto Einreichen",
+    "submitSubtitle": "Machen Sie ein Foto und fügen Sie Details für die NFT-Prägung hinzu"
+  },
+  "wallet": {
+    "connect": "Wallet Verbinden",
+    "connectDesc": "Verbinden Sie sich, um Ihr Foto einzureichen",
+    "connecting": "Wallet wird verbunden...",
+    "timeout": "Automatische Verbindung abgelaufen. Bitte manuell verbinden."
+  },
+  "form": {
+    "comment": "Kommentar",
+    "commentPlaceholder": "Teilen Sie Ihre Gedanken...",
+    "email": "E-Mail",
+    "emailPlaceholder": "ihre@email.com",
+    "socialHandles": "Soziale Medien",
+    "optional": "(optional)",
+    "xPlaceholder": "X / Twitter",
+    "instagramPlaceholder": "Instagram",
+    "blueskyPlaceholder": "Bluesky",
+    "submit": "Zur Prüfung Einreichen",
+    "submitting": "Wird eingereicht...",
+    "fileTooLarge": "Datei zu groß. Maximal 50 MB.",
+    "compressionFailed": "Bildverarbeitung fehlgeschlagen. Versuchen Sie ein anderes.",
+    "compressing": "Bild wird komprimiert..."
+  },
+  "photo": {
+    "takeOrUpload": "Foto aufnehmen oder Bild hochladen",
+    "takePhoto": "Foto Aufnehmen",
+    "upload": "Hochladen"
+  },
+  "confirmation": {
+    "title": "Einreichung Erhalten!",
+    "description": "Ihr Foto wurde zur Prüfung eingereicht. Ein Administrator wird es in Kürze überprüfen.",
+    "reference": "Referenz",
+    "submitAnother": "Weitere Einreichen"
+  }
+}

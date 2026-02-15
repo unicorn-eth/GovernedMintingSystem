@@ -1,0 +1,41 @@
+{
+  "app": {
+    "title": "Cunhagem Governada",
+    "subtitle": "Envie sua foto para consideração de NFT",
+    "submitTitle": "Envie Sua Foto",
+    "submitSubtitle": "Tire uma foto e adicione detalhes para cunhagem de NFT"
+  },
+  "wallet": {
+    "connect": "Conecte Sua Carteira",
+    "connectDesc": "Conecte-se para enviar sua foto para revisão",
+    "connecting": "Conectando carteira...",
+    "timeout": "Conexão automática expirou. Conecte manualmente."
+  },
+  "form": {
+    "comment": "Comentário",
+    "commentPlaceholder": "Compartilhe seus pensamentos...",
+    "email": "E-mail",
+    "emailPlaceholder": "seu@email.com",
+    "socialHandles": "Redes Sociais",
+    "optional": "(opcional)",
+    "xPlaceholder": "X / Twitter",
+    "instagramPlaceholder": "Instagram",
+    "blueskyPlaceholder": "Bluesky",
+    "submit": "Enviar para Revisão",
+    "submitting": "Enviando...",
+    "fileTooLarge": "Arquivo muito grande. Máximo 50MB.",
+    "compressionFailed": "Falha ao processar imagem. Tente outra.",
+    "compressing": "Comprimindo imagem..."
+  },
+  "photo": {
+    "takeOrUpload": "Tire uma foto ou envie uma imagem",
+    "takePhoto": "Tirar Foto",
+    "upload": "Enviar"
+  },
+  "confirmation": {
+    "title": "Envio Recebido!",
+    "description": "Sua foto foi enviada para revisão. Um administrador a revisará em breve.",
+    "reference": "Referência",
+    "submitAnother": "Enviar Outra"
+  }
+}

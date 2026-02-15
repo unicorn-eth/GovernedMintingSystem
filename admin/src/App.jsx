@@ -10,18 +10,25 @@ import Dashboard from './components/Dashboard';
 
 const queryClient = new QueryClient();
 
+const hasAutoconnectParams = () => {
+  const params = new URLSearchParams(window.location.search);
+  return params.has('walletId') || params.has('autoconnect');
+};
+
 export default function App() {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
         <RainbowKitProvider>
-          <UnicornAutoConnect
-            debug={import.meta.env.DEV}
-            onConnect={(wallet) => console.log('Unicorn connected:', wallet)}
-            onError={(error) => {
-              window.dispatchEvent(new CustomEvent('unicorn-connect-error', { detail: error }));
-            }}
-          />
+          {hasAutoconnectParams() && (
+            <UnicornAutoConnect
+              debug={import.meta.env.DEV}
+              onConnect={(wallet) => console.log('Unicorn connected:', wallet)}
+              onError={(error) => {
+                window.dispatchEvent(new CustomEvent('unicorn-connect-error', { detail: error }));
+              }}
+            />
+          )}
           <AdminGate>
             <Dashboard />
           </AdminGate>

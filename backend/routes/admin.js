@@ -13,13 +13,13 @@ router.get('/auth/challenge', (req, res) => {
   res.json(challenge);
 });
 
-router.post('/auth/verify', express.json(), (req, res) => {
-  const { message, signature } = req.body;
+router.post('/auth/verify', express.json(), async (req, res) => {
+  const { message, signature, address } = req.body;
   if (!message || !signature) {
     return res.status(400).json({ error: 'message and signature are required' });
   }
 
-  const result = verifySignatureAndCreateSession(message, signature);
+  const result = await verifySignatureAndCreateSession(message, signature, address);
   if (!result) {
     return res.status(403).json({ error: 'Not an authorized admin wallet' });
   }
@@ -151,6 +151,7 @@ router.post('/submissions/:id/mint', express.json(), async (req, res) => {
       recipientAddress: submission.walletAddress,
       imageIpfsUrl: submission.photoIpfsUrl,
       comment: submission.comment,
+      eventName: collection.name,
     });
 
     const updated = await prisma.submission.update({
@@ -206,16 +207,18 @@ router.get('/submissions/:id/share-urls', async (req, res) => {
     const collection = await prisma.nftCollection.findFirst({ where: { name: submission.mintedToCollection } });
     const chainId = collection?.chainId || 137;
 
-    const explorerUrl =
-      chainId === 137
-        ? `https://polygonscan.com/tx/${submission.mintTxHash}`
-        : `https://basescan.org/tx/${submission.mintTxHash}`;
+    const explorers = {
+      137: `https://polygonscan.com/tx/${submission.mintTxHash}`,
+      8453: `https://basescan.org/tx/${submission.mintTxHash}`,
+      42161: `https://arbiscan.io/tx/${submission.mintTxHash}`,
+    };
+    const explorerUrl = explorers[chainId] || explorers[137];
 
+    const openseaChains = { 137: 'matic', 8453: 'base', 42161: 'arbitrum' };
+    const openseaChain = openseaChains[chainId] || 'matic';
     const openseaUrl =
       submission.tokenId && collection
-        ? chainId === 137
-          ? `https://opensea.io/assets/matic/${collection.contractAddress}/${submission.tokenId}`
-          : `https://opensea.io/assets/base/${collection.contractAddress}/${submission.tokenId}`
+        ? `https://opensea.io/assets/${openseaChain}/${collection.contractAddress}/${submission.tokenId}`
         : explorerUrl;
 
     const text = [

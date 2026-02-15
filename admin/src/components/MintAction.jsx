@@ -27,7 +27,7 @@ export default function MintAction({ submission, onMinted, alreadyMinted }) {
   if (mintResult) {
     return (
       <div className="space-y-4 pt-2">
-        <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+        <div className="bg-green-50 border border-green-200 rounded-xl p-3 sm:p-4">
           <p className="text-green-700 font-semibold text-sm mb-2">
             {alreadyMinted ? 'Minted' : 'Minted Successfully!'}
           </p>
