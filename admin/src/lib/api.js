@@ -87,6 +87,13 @@ export async function getShareUrls(id) {
   return adminFetch(`/api/admin/submissions/${id}/share-urls`);
 }
 
+export async function recordShare(id, platform) {
+  return adminFetch(`/api/admin/submissions/${id}/record-share`, {
+    method: 'POST',
+    body: JSON.stringify({ platform }),
+  });
+}
+
 export async function listCollections() {
   return adminFetch('/api/admin/collections');
 }

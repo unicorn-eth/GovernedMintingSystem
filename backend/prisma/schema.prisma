@@ -37,6 +37,11 @@ model Submission {
   mintedToCollection String?
   tokenId            String?
 
+  // Social share tracking
+  sharedToX         DateTime?
+  sharedToBluesky   DateTime?
+  sharedToInstagram DateTime?
+
   // Timestamps
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

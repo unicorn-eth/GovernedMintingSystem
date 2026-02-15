@@ -198,6 +198,8 @@ router.post('/collections', express.json(), async (req, res) => {
 
 // --- Share URLs ---
 
+const normalizeHandle = (h) => h ? `@${h.replace(/^@/, '')}` : '';
+
 router.get('/submissions/:id/share-urls', async (req, res) => {
   try {
     const submission = await prisma.submission.findUnique({ where: { id: req.params.id } });
@@ -221,9 +223,14 @@ router.get('/submissions/:id/share-urls', async (req, res) => {
         ? `https://opensea.io/assets/${openseaChain}/${collection.contractAddress}/${submission.tokenId}`
         : explorerUrl;
 
+    const xHandle = normalizeHandle(submission.xHandle);
+    const blueskyHandle = normalizeHandle(submission.blueskyHandle);
+    const instagramHandle = normalizeHandle(submission.instagramHandle);
+
     const text = [
       submission.comment,
-      submission.xHandle ? `by @${submission.xHandle}` : '',
+      xHandle ? `by ${xHandle}` : '',
+      submission.photoGatewayUrl,
       openseaUrl,
     ]
       .filter(Boolean)
@@ -231,7 +238,8 @@ router.get('/submissions/:id/share-urls', async (req, res) => {
 
     const bskyText = [
       submission.comment,
-      submission.blueskyHandle ? `by @${submission.blueskyHandle}` : '',
+      blueskyHandle ? `by ${blueskyHandle}` : '',
+      submission.photoGatewayUrl,
       openseaUrl,
     ]
       .filter(Boolean)
@@ -239,8 +247,9 @@ router.get('/submissions/:id/share-urls', async (req, res) => {
 
     const instagramCaption = [
       submission.comment,
-      submission.instagramHandle ? `@${submission.instagramHandle}` : '',
+      instagramHandle || '',
       '#NFT',
+      submission.photoGatewayUrl,
       openseaUrl,
     ]
       .filter(Boolean)
@@ -256,6 +265,24 @@ router.get('/submissions/:id/share-urls', async (req, res) => {
   } catch (error) {
     console.error('Share URLs error:', error.message);
     res.status(500).json({ error: 'Failed to generate share URLs' });
+  }
+});
+
+router.post('/submissions/:id/record-share', express.json(), async (req, res) => {
+  try {
+    const { platform } = req.body;
+    const fieldMap = { x: 'sharedToX', bluesky: 'sharedToBluesky', instagram: 'sharedToInstagram' };
+    const field = fieldMap[platform];
+    if (!field) return res.status(400).json({ error: 'Invalid platform. Use: x, bluesky, instagram' });
+
+    const submission = await prisma.submission.update({
+      where: { id: req.params.id },
+      data: { [field]: new Date() },
+    });
+    res.json({ success: true, submission });
+  } catch (error) {
+    console.error('Record share error:', error.message);
+    res.status(500).json({ error: 'Failed to record share' });
   }
 });
 
