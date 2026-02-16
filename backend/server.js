@@ -49,6 +49,12 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString(), uptime: process.uptime() });
 });
 
+// Version
+const { version } = require('./package.json');
+app.get('/version', (req, res) => {
+  res.json({ service: 'backend', version });
+});
+
 // Routes
 app.use('/api/upload', uploadRoutes);
 app.use('/api/ens', ensRoutes);
