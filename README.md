@@ -127,6 +127,8 @@ npm run dev
 
 4. **Set the root directory** — in the service settings, set **Root Directory** to `backend`. This tells Railway to run all commands from the `backend/` folder.
 
+   **Set the watch path** → Settings, look for Watch Paths. Set it to: `/backend/**` 
+
 5. **Configure environment variables** — in the service's "Variables" tab, add every variable from `backend/.env.example`:
 
    | Variable | Value | Notes |
