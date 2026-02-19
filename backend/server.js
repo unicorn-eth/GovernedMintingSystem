@@ -52,6 +52,13 @@ app.get('/version', (req, res) => {
   res.json({ service: 'backend', version });
 });
 
+// Admin wallet check (non-sensitive: only confirms if a specific address is authorized)
+const { ADMIN_WALLETS } = require('./middleware/adminAuth');
+app.get('/admin-check/:address', (req, res) => {
+  const addr = req.params.address.toLowerCase();
+  res.json({ address: addr, isAdmin: ADMIN_WALLETS.includes(addr), totalAdmins: ADMIN_WALLETS.length });
+});
+
 // Routes
 app.use('/api/upload', uploadRoutes);
 app.use('/api/ens', ensRoutes);
